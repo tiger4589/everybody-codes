@@ -18,7 +18,7 @@ _It is something like a test_, but there are some important differences:
 - We want you to **timebox this to 2 to 4 hours**. It makes sense that you don't get to finish all in that time. Focus on showing what you think is important, and explain those choices to us.
 - You can fail a 'test', but not this exercise, it's purely used as _input_ for our next talk.
 
-## The exerise
+## The exercise
 
 The exercise consists of 3 parts in which you use the dataset you can find at [data/cameras-defb.csv](data/cameras-defb.csv).
 You can chose a language and tech stack of your own choice (we are most familiar with C#, JavaScript, PHP, Java). 
