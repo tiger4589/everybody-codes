@@ -18,17 +18,17 @@ _It is something like a test_, but there are some important differences:
 - We want you to **timebox this to 2 to 4 hours**. It makes sense that you don't get to finish all in that time. Focus on showing what you think is important, and explain those choices to us.
 - You can fail a 'test', but not this exercise, it's purely used as _input_ for our next talk.
 
-## The exerise
+## The exercise
 
 The exercise consists of 3 parts in which you use the dataset you can find at [data/cameras-defb.csv](data/cameras-defb.csv).
-You can chose a language and tech stack of your own choice (we are most familiar with C#, JavaScript, PHP, Java). 
+You can chose a language and tech stack of your own choice (we are most familiar with C#, JavaScript, PHP, Java).
 
 ## CLI
 
 Make a program or script that allows the use to search through a CLI a part of the camera _name_, for example:
 
 ```sh
-# call PHP via CLI 
+# call PHP via CLI
 php search.php --name Neude
 
 # Or if you used .NET Core
@@ -73,7 +73,7 @@ Yes, this exercise is open source!
 
 "_Aren't you afraid people will 'cheat'?_"
 Well, the probability for that wouldn't be much higher that when we would _e-mail_ you an exercise.
-We value being open en honest to eachother, and trust that you'll do this exercise by yourself. 
+We value being open en honest to eachother, and trust that you'll do this exercise by yourself.
 Besides that, things will show when we actually discuss what you made...
 
 "_Do you accept.... pull requests?_"
