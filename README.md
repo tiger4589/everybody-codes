@@ -77,7 +77,7 @@ We value being open en honest to eachother, and trust that you'll do this exerci
 Besides that, things will show when we actually discuss what you made...
 
 "_Do you accept.... pull requests?_"
-Of couse!
+Of course!
 But it isn't the primary goal, so rather focus on the exercise itself.
 Should you have - after the exercise - some suggestions for how to improve, or would you like to correct a typo: keep them PR's coming!
 Or open an issue if you have questions.
