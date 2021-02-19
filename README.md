@@ -63,9 +63,10 @@ The spreading of the data needs to follow the following rules based on the `numb
 3. If `number` is divisible by 3 and divisible by 5, then it should go in the third column.
 4. If `number` is not divisible by 3 and is not  divisible by 5, then it should go in the last column.
 
-The second part consists of showing the camera locations as markers in Google Maps.
+The second part consists of showing the camera locations as markers on a map. 
+
 Show _all_ cameras in the `div` with id _map_ in the given [code/index.html](code/index.html).
-You can find documentation for how to use Google Maps at [the Google Maps documentation](https://developers.google.com/maps/documentation/javascript/examples/marker-simple).
+You can use your preferred Map-tool, but if you don't have a preference, then we suggest that you look at using a combi of [Leaflet JavaScript library](https://leafletjs.com/examples/quick-start/) with the map pictures via a [free MapBox account](https://www.mapbox.com/studio/account/tokens/) (which uses OpenStreetMap). In that case, [the coordinates 52.0914 by 5.1115 will give you a centered view of Utrecht](https://www.openstreetmap.org/#map=14/52.0914/5.1115).
 
 ## Wut? Open Source?!
 
