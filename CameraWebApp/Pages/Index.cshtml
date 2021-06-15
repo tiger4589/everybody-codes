@@ -1,0 +1,120 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Infi | Security cameras Utrecht";
+}
+
+<div id="map"></div>
+
+<table id="cameraTableContainer">
+    <tbody>
+        <tr>
+            <td>
+                <table id="column3">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Cameras 3</th>
+                        </tr>
+                        @for (int i = 0; i < Model.Cameras3.Count; i++)
+                        {
+                            <tr>
+                                <th>@Html.DisplayFor(model => model.Cameras3[i].Number)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3[i].Name)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3[i].Latitude)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3[i].Longitude)</th>
+                            </tr>
+                        }
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table id="column5">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Cameras 5</th>
+                        </tr>
+                        @for (int i = 0; i < Model.Cameras5.Count; i++)
+                        {
+                            <tr>
+                                <th>@Html.DisplayFor(model => model.Cameras5[i].Number)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras5[i].Name)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras5[i].Latitude)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras5[i].Longitude)</th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table id="column15">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Cameras 3 &amp; 5</th>
+                        </tr>
+                        @for (int i = 0; i < Model.Cameras3And5.Count; i++)
+                        {
+                            <tr>
+                                <th>@Html.DisplayFor(model => model.Cameras3And5[i].Number)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3And5[i].Name)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3And5[i].Latitude)</th>
+                                <th>@Html.DisplayFor(model => model.Cameras3And5[i].Longitude)</th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+            <td>
+                <table id="columnOther">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Cameras Overig</th>
+                        </tr>
+                        @for (int i = 0; i < Model.CamerasNone.Count; i++)
+                        {
+                            <tr>
+                                <th>@Html.DisplayFor(model => model.CamerasNone[i].Number)</th>
+                                <th>@Html.DisplayFor(model => model.CamerasNone[i].Name)</th>
+                                <th>@Html.DisplayFor(model => model.CamerasNone[i].Latitude)</th>
+                                <th>@Html.DisplayFor(model => model.CamerasNone[i].Longitude)</th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        var mymap = L.map('map').setView([52.091968, 5.122204], 12);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: '@Model.MapBoxApiToken'
+    }).addTo(mymap);
+
+
+        var cameras = @Html.Raw(Json.Serialize(Model.AllCameras));
+
+        for (var i = 0; i < cameras.length; i++) {
+            var marker = L.marker([cameras[i].latitude, cameras[i].longitude]).addTo(mymap);
+            marker.bindPopup(cameras[i].name);
+        }
+
+    </script>
+
+}
